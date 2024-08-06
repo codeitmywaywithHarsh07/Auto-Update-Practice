@@ -3,7 +3,12 @@ const path = require('node:path');
 const { updateElectronApp } = require('update-electron-app');
 
 // Enable auto-updates
-updateElectronApp();
+updateElectronApp({
+  repo: 'codeitmywaywithHarsh07/Auto-Update-Practice',
+  updateInterval: '1 hour',
+  logger: log,
+  notifyUser: true,
+});
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
